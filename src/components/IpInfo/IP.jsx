@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Map from './Map'
 import '../../App.css'
+import ShowBTN from '../Address/ShowBTN';
 
 
 function IP() {
@@ -12,7 +13,7 @@ function IP() {
       const response = await fetch('https://api.ipify.org?format=json');
       if (!response.ok) throw new Error('Failed to fetch IP');
       const data = await response.json();
-      return data.ip; // returns the IPv4 address as a string
+      return data.ip; 
     } catch (error) {
       console.error('Error fetching IP:', error);
       return null;
@@ -23,18 +24,19 @@ function IP() {
     getUserIPv4().then(ip => setUserIp(ip))
   }, [])
 
-  console.log("ip in app : ", userIp)
-
   return (
     <>
-     <div className="maindiv">
-       <h1>Ip Address Find</h1>
-      <div className="App">
+     <div >
+       <h1 className="text-[40px] " >IP Address Find</h1>
+       <br /> <hr />
+       <br />
+      <div className="flex justify-evenly items-center">
         <p>Your IP: {userIp ? userIp : "Loading..."}</p>
         <Map ip={userIp} />
       </div>
       
      </div>
+     {/* <ShowBTN /> */}
     </>
   )
 }
