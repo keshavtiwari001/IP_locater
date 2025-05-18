@@ -7,7 +7,7 @@ const SearchByIP = () => {
         <>
             <div className='p-10 rounded-lg shadow-xl'>
                 <IPForum />
-                <ShowBTN />
+                {/* <ShowBTN /> */}
             </div>
         </>
     )

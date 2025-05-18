@@ -27,7 +27,7 @@ function IP() {
   return (
     <>
      <div >
-       <h1 className="text-[40px] " >IP Address Find</h1>
+       <h1 className="text-[40px] " >Your IP Address</h1>
        <br /> <hr />
        <br />
       <div className="flex justify-evenly items-center">

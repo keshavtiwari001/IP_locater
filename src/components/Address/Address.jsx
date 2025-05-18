@@ -1,5 +1,5 @@
-import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import React,{useEffect} from 'react';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
@@ -14,6 +14,15 @@ L.Icon.Default.mergeOptions({
     iconUrl: icon,
     shadowUrl: iconShadow,
 });
+
+// Create a component to handle map position updates
+function MapUpdater({ center }) {
+    const map = useMap();
+    useEffect(() => {
+        map.setView(center);
+    }, [center, map]);
+    return null;
+}
 
 const Address = () => {
     const coordinates = useSelector((state) => state.angleSet.coordinates);
@@ -32,6 +41,7 @@ const Address = () => {
                 zoom={13}
                 style={{ height: '100%', width: '100%' }}
             >
+                <MapUpdater center={position} />
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

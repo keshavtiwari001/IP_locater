@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { setCoordinates } from '../../APP/features/angleSet'
+import ShowBTN from '../Address/ShowBTN'
+
 
 const IPForum = () => {
     const [ip, setIp] = useState('')
@@ -126,6 +128,11 @@ const IPForum = () => {
                     </div>
                 </form>
             </div>
+
+            {ipData && (
+                <ShowBTN />
+            )}
+
         </div>
     )
 }
