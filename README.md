@@ -1,12 +1,59 @@
-# React + Vite
+# IP Address Locator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application that allows users to locate and get information about IP addresses.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Frontend
+- React.js
+- React Router Dom (for navigation)
+- Material Tailwind
+- TailwindCSS
+- Hero Icons
 
-## Expanding the ESLint configuration
+### Features
+- Responsive navigation system
+- Custom breakpoints for different screen sizes
+- Search IP address functionality
+- About page
+- Clean and modern UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Pages
+- Home (/)
+- Search by IP (/searchbyip)
+- About Us (/about)
+
+## Responsive Design
+- Mobile menu for screens < 700px
+- Desktop navigation for screens ≥ 700px
+- Automatic responsive adjustments
+
+## Setup and Installation
+
+```bash
+# Clone the repository
+git clone [your-repo-url]
+
+# Navigate to project directory
+cd IP_locator
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+## Project Structure
+```
+IP_locator/
+├── src/
+│   ├── components/
+│   │   └── Navbar/
+│   │       └── Nav.jsx
+│   ├── pages/
+│   └── ...
+```
+
+## Contributing
+Feel free to submit issues and pull requests
